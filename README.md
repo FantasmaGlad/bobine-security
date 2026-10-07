@@ -1,24 +1,26 @@
 # security.bobine.fit
 
-Site statique de divulgation de vulnérabilités de [Bobine](https://github.com/FantasmaGlad/Bobine), servi par GitHub Pages sur <https://security.bobine.fit>.
+Static vulnerability disclosure site for [Bobine](https://github.com/FantasmaGlad/Bobine), served by GitHub Pages at <https://security.bobine.fit>.
 
-Il publie la clé OpenPGP de réception des rapports, son empreinte, une copie du `security.txt` signé et un renvoi vers la politique complète. Il constitue un canal de vérification de l'empreinte indépendant du site principal `bobine.fit`.
+It publishes the OpenPGP key used to receive vulnerability reports, its fingerprint, a copy of the signed `security.txt` and a pointer to the full policy. It is a fingerprint verification channel that is independent of the main website `bobine.fit`.
 
-| Fichier | Rôle |
+French version: [README.fr.md](README.fr.md).
+
+| File | Purpose |
 |---|---|
-| `index.html`, `fr/index.html` | page d'accueil en anglais et en français |
-| `snake/index.html` | jeu Snake |
-| `security.asc` | clé publique OpenPGP (empreinte `23CA D324 C507 FB0F 97E6 AECA 6E4C 020E F8BD FEB2`) |
-| `.well-known/security.txt` | copie du fichier signé (RFC 9116), identique à celle de `bobine.fit` |
-| `CNAME`, `.nojekyll` | domaine personnalisé ; `.nojekyll` est indispensable pour servir `.well-known` |
-| `robots.txt`, `sitemap.xml`, `llms.txt` | indexation |
+| `index.html`, `fr/index.html` | home page in English (default) and French |
+| `snake/index.html` | Snake game |
+| `security.asc` | OpenPGP public key (fingerprint `23CA D324 C507 FB0F 97E6 AECA 6E4C 020E F8BD FEB2`) |
+| `.well-known/security.txt` | copy of the signed file ([RFC 9116](https://www.rfc-editor.org/rfc/rfc9116)), identical to the one on `bobine.fit` |
+| `CNAME`, `.nojekyll` | custom domain; `.nojekyll` is required for `.well-known` to be served |
+| `robots.txt`, `sitemap.xml`, `llms.txt` | indexing |
 
 ## Maintenance
 
-La clé, son empreinte et `security.txt` doivent rester identiques à ceux de `bobine.fit` et du dépôt Bobine (`docs/security/`). Lors d'un renouvellement ou d'une rotation de clé, mettre à jour ce dépôt dans la même opération et vérifier que l'empreinte est la même sur tous les canaux.
+The key, its fingerprint and `security.txt` must stay identical to those on `bobine.fit` and in the Bobine repository (`docs/security/`). When the key is renewed or rotated, update this repository in the same operation and check that the fingerprint is the same on every channel.
 
-Une surveillance quotidienne vérifie que le domaine résout toujours vers ce dépôt et que l'empreinte servie est la bonne.
+A daily check verifies that the domain still resolves to this repository and that the fingerprint served is the expected one.
 
-## Licence
+## License
 
-AGPL-3.0, voir [LICENSE](LICENSE).
+AGPL-3.0, see [LICENSE](LICENSE).
